@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../shared/event';
+import { EventFut } from '../shared/event';
 
 @Component({
   selector: 'app-home',
