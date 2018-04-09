@@ -1,0 +1,50 @@
+<mat-toolbar> Top-Rated Events We Conducted </mat-toolbar>
+  <mat-grid-list cols="2">
+      <mat-grid-tile *ngFor ="let event of events">
+          <mat-card>
+              <mat-card-header>
+                <mat-card-title><h4>{{event.name}}</h4></mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src={{event.image}} alt="img Unavailable" >
+              <mat-card-content>
+                <p> <mat-list>
+                                <mat-list-item> <i class="material-icons">person_pin</i>Description:&nbsp;&nbsp;<b> {{event.description}}</b> </mat-list-item>
+                                <mat-list-item> <i class="material-icons">date_range</i> Date Started:&nbsp;&nbsp;<b> {{event.dateStarted}}</b> </mat-list-item>
+                                <mat-list-item> <i class="material-icons">date_range</i> Date End:&nbsp;&nbsp;<b> {{event.dateEnd}}</b> </mat-list-item>
+                                <mat-list-item > <i class="material-icons">star</i> Rate:&nbsp;&nbsp;<b>{{event.rate}}</b></mat-list-item>
+                        </mat-list></p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/event/']"> <i class="material-icons">visibility</i> Event Details</button>
+                <button mat-button mat-raised-button class="editButton"  [routerLink]="['/add-event']"> <i class="material-icons">mode_edit</i> Add Event</button>
+              </mat-card-actions>
+            </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>
+
+  <br>
+  <br>
+  <br>
+  <mat-toolbar> Events We are Planning to Conduct </mat-toolbar>
+  <mat-grid-list cols="2">
+      <mat-grid-tile *ngFor ="let eveFut of eventFuts">
+          <mat-card>
+              <mat-card-header>
+                <mat-card-title><h4>{{eveFut.name}}</h4></mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src={{eveFut.image}} alt="img Unavailable">
+              <mat-card-content>
+                <p> <mat-list>
+                                <mat-list-item> <i class="material-icons">person_pin</i> Description:&nbsp;&nbsp;<b> {{eveFut.description}}</b> </mat-list-item>
+                                <mat-list-item> <i class="material-icons">date_range</i> Date Added:&nbsp;&nbsp;<b> {{eveFut.dateStarted}}</b> </mat-list-item>
+                                <mat-list-item *ngIf="dateread"> <i class="material-icons">date_range</i> Date Read:&nbsp;&nbsp;<b> {{eveFut.dateEnd}}</b> </mat-list-item>
+                                <mat-list-item *ngIf="rate"> <i class="material-icons">star</i> Rate:&nbsp;&nbsp;<b>{{rate}}</b></mat-list-item>
+                        </mat-list></p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/event/']"> <i class="material-icons">visibility</i> Event Details</button>
+                <button mat-button mat-raised-button class="editButton"  [routerLink]="['/add-event']"> <i class="material-icons">mode_edit</i> Add Event</button>
+              </mat-card-actions>
+            </mat-card>
+      </mat-grid-tile>
+  </mat-grid-list>

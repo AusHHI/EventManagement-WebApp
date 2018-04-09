@@ -1,0 +1,27 @@
+<!--nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" [routerLink]="['/']">Event-App</a>
+  </div>
+          <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/']"> Home </a></li>
+            <li><a [routerLink]="['/add-event']"> Add Event </a></li>
+          </ul>
+      </div>
+    </nav-->
+    <!--button mat-button>MyButton</button-->
+    <!--ul>
+      <li *ngFor= "let event of events | async"> {{ event | json}}</li>
+    </ul-->
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span><a [routerLink]="['/']">Event-App </a></span>
+
+        <span class="example-spacer"></span>
+
+        <button mat-button><a [routerLink]="['/']"> Home </a></button>
+        <button mat-button><a [routerLink]="['/add-event']"> Add-Event</a></button>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
